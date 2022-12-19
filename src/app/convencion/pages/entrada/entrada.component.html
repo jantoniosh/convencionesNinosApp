@@ -1,0 +1,12 @@
+<app-descripcion-convencion [clase]=clase [titulo]=entrada.titulo [subtitulo]=subtitulo [imagenUrl]=entrada.thumbnail
+  [imagenAlt]=entrada.thumbnail [descripciones]=descripcion [detalle]=false [convencion]=entrada.convencion
+  [categoria]=entrada.tipo [archivo]=entrada.archivo>
+</app-descripcion-convencion>
+<div class="block-info-page etiquetas">
+  <h3 style="margin-bottom: 16px;">Etiquetas</h3>
+  <div class="contenedor">
+    <a *ngFor="let etiqueta of etiquetas" [routerLink]='getLigaEtiqueta(etiqueta)'>
+      <span class="hashtag">#</span>{{etiqueta}}
+    </a>
+  </div>
+</div>

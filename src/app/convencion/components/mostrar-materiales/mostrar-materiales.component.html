@@ -1,0 +1,61 @@
+<div [ngClass]="getClassOf()">
+  <h2 class="subtitle">
+    <div *ngIf="seccion.titulo == 'Vídeos'">
+      <img [src]=urlBocina class="iconmenu"> Vídeos
+    </div>
+    <div *ngIf="seccion.titulo == 'Fichas Temáticas'">
+      <img [src]=urlFicha class="iconmenu"> Fichas Temáticas
+    </div>
+    <div *ngIf="seccion.titulo != 'Vídeos' && seccion.titulo != 'Fichas Temáticas'">
+      {{seccion.titulo}}
+    </div>
+    <ng-template #podcast>
+      <img [src]=urlBocina class="iconmenu"> Vídeos
+    </ng-template>
+  </h2>
+  <div class="descripcion" *ngIf="seccion.descripcion" style="margin-bottom: 30px">
+    <p *ngFor="let texto of seccion.descripcion" class="descripcion" [innerHTML]="texto">
+    </p>
+  </div>
+  <div class="block-covers">
+    <div *ngFor="let entrada of seccion.entradas | slice:0:seccion.noElementos; let i = index" data-aos="fade-up"
+      data-aos-duration="1000" class="cover">
+      <div class="image-cover">
+        <ng-container *ngIf="entrada.tipo != 'Ficha'; else imgTemplate">
+          <a [routerLink]=entrada.url routerLinkActive="active">
+            <img [src]=entrada.thumbnail>
+          </a>
+        </ng-container>
+        <ng-template #imgTemplate>
+          <a (click)="mostrarDialog(entrada.archivo)"><img [src]=entrada.thumbnail></a>
+        </ng-template>
+      </div>
+      <app-verdescargarcompartir [archivo]="entrada.archivo" [ruta]="entrada.url" [tipo]="entrada.tipo">
+      </app-verdescargarcompartir>
+      <div class="info-cover">
+        <h2><a [routerLink]=entrada.url routerLinkActive="active">
+            <ng-container *ngIf="entrada.tipo === 'Artículo'; else elseTemplate">
+              {{entrada.nArticulo}}. {{entrada.titulo}}
+            </ng-container>
+            <ng-template #elseTemplate>
+              {{entrada.titulo}}
+            </ng-template>
+          </a></h2>
+        <h3 *ngIf="seccion.detalle">Convención:
+          <ng-container *ngIf="entrada.convencion != 'CDN, CDPD'; else elseTemplate">
+            <a [routerLink]="getRutaConvencion(entrada.convencion)" routerLinkActive="active">{{entrada.convencion}}</a>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <a routerLink="/cdn" routerLinkActive="active">CDN</a>, <a routerLink="/cdpd"
+              routerLinkActive="active">CDPD</a>
+          </ng-template>
+        </h3>
+        <h3 *ngIf="seccion.detalle">Tipo: <a [routerLink]="getRutaCategoria(entrada.tipo)"
+            routerLinkActive="active">{{entrada.tipo}}</a></h3>
+      </div>
+    </div>
+    <div class="verMasBtn" *ngIf="seccion.noElementos < this.seccion.entradas.length">
+      <a class="ver-mas" *ngIf="seccion.boton" (click)="aumentar()">Ver más</a>
+    </div>
+  </div>
+</div>

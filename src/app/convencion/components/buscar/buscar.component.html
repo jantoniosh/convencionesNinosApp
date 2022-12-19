@@ -1,0 +1,64 @@
+<div id="menu-elements-container">
+  <div class="wrapper-ham" (click)="mostrarMenu()">
+    <div class="btn">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </div>
+</div>
+<div id="menu-list-header">
+  <ul class="first-menu">
+    <li routerLink="/">
+      <a routerLink="/">Inicio</a>
+    </li>
+    <li>
+      <a routerLink="/cdn">CDN</a>
+      <button class="open-submenu" (click)="showCdn()">
+        <fa-icon [icon]=angleDown></fa-icon>
+      </button>
+      <ul *ngIf="cdnMenu">
+        <li *ngFor="let entrada of entradasCdn; let i = index">
+          <a [routerLink]=entrada.url>Artículo {{i+1}}</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="/cdpd">CDPD</a>
+      <button class="open-submenu" (click)="showCedaw()">
+        <fa-icon [icon]=angleDown></fa-icon>
+      </button>
+      <ul *ngIf="cdpdMenu">
+        <li *ngFor="let entrada of entradasCdpd; let i = index">
+          <a [routerLink]=entrada.url>Artículo {{i+1}}</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="/categoria/video">
+        <img [src]=urlBocina class="iconmenu"> Videos
+      </a>
+      <button class="open-submenu" (click)="showVideos()">
+        <fa-icon [icon]=angleDown></fa-icon>
+      </button>
+      <ul *ngIf="videosMenu">
+        <li *ngFor="let entrada of entradasVideo">
+          <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="/categoria/ficha">
+        <img [src]=urlFicha class="iconmenu"> Fichero
+      </a>
+      <button class="open-submenu" (click)="showFichero()">
+        <fa-icon [icon]=angleDown></fa-icon>
+      </button>
+      <ul *ngIf="ficheroMenu">
+        <li *ngFor="let entrada of entradasFichero">
+          <a [routerLink]=entrada.url>{{entrada.titulo}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

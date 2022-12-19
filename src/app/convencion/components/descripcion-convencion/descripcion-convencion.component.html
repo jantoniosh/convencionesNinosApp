@@ -1,0 +1,32 @@
+<div class={{clase}}>
+  <div class="content-convencion">
+    <div class="text-content-top">
+      <h1 class="title-convencion">{{titulo}}</h1>
+      <h2>{{subtitulo}}</h2>
+      <div class="single-info">
+        <p *ngFor="let descripcion of descripciones">
+          {{descripcion}}
+        </p>
+        <div *ngIf="categoria === 'Video'" class="player">
+          <video width="320" height="240" controls>
+            <source [src]=archivo type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="block-covers">
+      <div class="cover" data-aos="fade-up" data-aos-duration="1000">
+        <div data-aos="fade-up" data-aos-duration="1000" class="image-cover">
+          <ng-container *ngIf="categoria != 'Ficha'; else imgTemplate">
+            <img [src]=rutaThumb>
+          </ng-container>
+          <ng-template #imgTemplate>
+            <a (click)="mostrarDialog(archivo)"><img [src]=rutaThumb></a>
+          </ng-template>
+        </div>
+        <app-verdescargarcompartir [archivo]=archivo [ruta]=ruta [tipo]=categoria>
+        </app-verdescargarcompartir>
+      </div>
+    </div>
+  </div>
+</div>

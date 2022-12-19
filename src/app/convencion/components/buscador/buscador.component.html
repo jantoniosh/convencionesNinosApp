@@ -1,0 +1,50 @@
+<div class="buscador">
+  <div class="buscadorFormulario">
+    <div class="closesearch">
+      <button
+        style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: transparent; border: none; color: #fff; padding: 0px; margin: 0px; font-size: 30px;"
+        (click)="mostrarBuscador()">
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </button>
+    </div>
+    <div class="opensearch">
+      <button
+        style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: transparent; border: none; color: #fff; padding: 0px; margin: 0px; font-size: 30px;"
+        (click)="mostrarBuscador()">
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </button>
+    </div>
+    <div class="searchblock">
+      <h3>Búsqueda</h3>
+      <form>
+        <mat-form-field class="inputTema">
+          <mat-label>Tema</mat-label>
+          <input type="text" matInput [formControl]="tituloControl" [matAutocomplete]="autoTitulo"
+            (keydown)="onKeydown($event)">
+          <mat-autocomplete #autoTitulo="matAutocomplete">
+            <mat-option *ngFor="let titulo of filTitulos | async" [value]="titulo">
+              {{titulo}}
+            </mat-option>
+          </mat-autocomplete>
+          <span *ngIf="tooltip" class="tooltiptext">
+            <p>Este buscador predictivo, permite obtener resultados respecto de temas relacionados con los
+              derechos de las mujeres sistematizados en los diversos recursos del sitio, permite navegar
+              entre
+              las etiquetas y fuentes usadas en el análisis que encontrarás en las diversas fichas, a
+              través
+              de las cuales ubica los materiales y textos útiles para una argumentación con perspectiva de
+              género.</p>
+          </span>
+        </mat-form-field>
+        <div class="botonInfo">
+          <button (click)="enviar()" class="enviar">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </button>
+          <button (click)="showTooltip()" class="tooltipsearch">
+            <fa-icon [icon]="faQuestion"></fa-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

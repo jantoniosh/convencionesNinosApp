@@ -1,0 +1,95 @@
+<div class="block-top-content home">
+  <div class="text-content-top">
+    <h1 class="title" style="color: #ff5f3f;">Todos los derechos para todas las personas</h1>
+    <h2 class="subtitle">Jurisprudencia internacional con perspectiva de infancia</h2>
+    <h2 class="subtitle">Jurisprudencia internacional sobre la discapacidad</h2>
+  </div>
+  <div class="block-covers">
+    <div class="cover" data-aos="fade-up" data-aos-duration="1000">
+      <div data-aos="fade-up" data-aos-duration="1000" class="image-cover">
+        <a routerLink="cdn" routerLinkActive="active"><img [src]=portadaCDNSrc [alt]=portadaCDNAlt></a>
+      </div>
+      <app-verdescargarcompartir archivo="assets/files/cdn/CDN_Cuadernillo.pdf" ruta="belem-do-para" tipo="Ficha">
+      </app-verdescargarcompartir>
+    </div>
+
+    <div class="cover" data-aos="fade-up" data-aos-duration="1000">
+      <div class="image-cover">
+        <a routerLink="cdpd" routerLinkActive="active"><img [src]=portadaCDPDSrc [alt]=portadaCDPDAlt></a>
+      </div>
+      <app-verdescargarcompartir archivo="assets/files/cdpd/CDPD_Cuadernillo.pdf" ruta="belem-do-para" tipo="Ficha">
+      </app-verdescargarcompartir>
+    </div>
+  </div>
+</div>
+<div class="block-info-page home">
+  <p>
+    <em>Todos los derechos para todas las personas</em> es una herramienta desarrollada por la Dirección de Derechos
+    Humanos Igualdad de Género y Asuntos Internacionales del <span class="versalitas">cjf</span>, cuyo propósito es que
+    el Poder Judicial de la Federación, organizaciones de la sociedad civil, personas activistas, litigantes y academia,
+    en su conjunto, se apropien de los contenidos, la interpretación y los alcances de dos Convenciones: La Convención
+    sobre los Derechos del Niño (1990), y la Convención sobre los Derechos de las Personas con Discapacidad (2008), dos
+    instrumentos internacionales sobre la discriminación que viven, y la protección que deben tener en todo momento,
+    tanto las personas menores de edad como las personas con discapacidad.
+  </p>
+  <p>
+    Estos materiales y herramientas de consulta y sensibilización tienen por objeto poner al centro los derechos de las
+    niñas, niños, niñes y adolescentes, tanto como de las personas con discapacidad, teniendo como principio que todas
+    las personas son titulares de todos los derechos humanos.
+  </p>
+  <p>
+    La sistematización jurídica así como el resto de los materiales de apoyos son en su conjunto un proyecto formativo y
+    de divulgación, que da voz y espacio a las infancias y a las personas con discapacidad y apunta a una transformación
+    cultural desde el interior de las instancias encargadas de garantizar el acceso a la protección, a la accesibilidad
+    y a la justicia a todas las personas en toda su diversidad de edades y circunstancias de vida.
+  </p>
+  <p>
+    Si, según Angela Davis, el feminismo es la idea radical de que las mujeres también son personas, el modelo social de
+    la discapacidad incluye la extrema y contraintuitiva noción —sobre el trasfondo de una realidad discriminatoria, y
+    capacitista, profundamente arraigado— de que las personas con discapacidad y las personas menores de edad también
+    son seres humanos.
+  </p>
+  <p>
+    El enfoque de derechos humanos, la perspectiva de infancia, la perspectiva de género y la perspectica e
+    discapacidad, colocan en el centro de interés a las personas, su dignidad y sus derechos, al tiempo que expulsa del
+    sistema las justificación de la discriminación con base en la propia discapacidad, edad o género.
+  </p>
+</div>
+<div class="block-info-page etiquetas">
+  <h3>Metodología</h3>
+  <p>La metodología para la identificación, el análisis y la sistematización de los estándares internacionales
+    aplicables a los derechos humanos de las infancias, así como a los derechos de personas con discapacidad, tuvo como
+    eje rector el desarrollo de derechos y obligaciones, contenidas en las Convenciones en la materia, correspondientes
+    al sistema universal de Derechos Humanos: la Convención sobre los Derechos del Niño (<span
+      class="versalitas">cdn</span>)y la Convención sobre Derechos de las Personas con Discapacidad (<span
+      class="versalitas">cdpd</span>).</p>
+  <p>
+    El análisis y la sistematización se guían por el método de “desempaque de derechos”, propuesto por Sandra Serrano y
+    Luis Daniel Vázquez (2013), que contempla diversos elementos propuestos por la normativa internacional y los
+    organismos en materia de derechos humanos, con la finalidad de exponer el contenido obligacional de los derechos
+    identificados en las Convenciones referidas.
+  </p>
+  <h3 style="margin-top: 16px;">Fuentes</h3>
+  <p style="margin-top: 16px;">Los estándares que se exponen para el desarrollo del contenido obligacional de los
+    derechos de las convenciones, son los adoptados por los órganos del sistema universal y del sistema interamericano
+    de derechos humanos, como instancias internacionales que tienen como mandato la interpretación y revisión sobre la
+    aplicación de las dos convenciones en cuestión. Entre los documentos revisados se encuentran recomendaciones,
+    observaciones generales y particulares a los países, sentencias e informes temáticos de los distintos organismos.
+  </p>
+  <h4>Fuentes del Sistema Universal de Derechos Humanos</h4>
+  <div class="contenedor fuentesblock" style="margin: 12px auto;">
+    <a class="fuenteslista" *ngFor="let fuente of fuentesA" [innerHTML]="fuente"></a>
+  </div>
+  <h4>Fuentes del Sistema Interamericano de Derechos Humanos</h4>
+  <div class="contenedor fuentesblock" style="margin: 12px auto;">
+    <a class="fuenteslista" *ngFor="let fuente of fuentesB" [innerHTML]="fuente"></a>
+  </div>
+  <h3 style="margin-top: 16px;">Etiquetas</h3>
+  <div class="contenedor" style="margin: 12px auto;">
+    <a *ngFor="let etiqueta of etiquetas" [routerLink]='getLigaEtiqueta(etiqueta)'>
+      <span class="hashtag">#</span>{{etiqueta}}
+    </a>
+  </div>
+</div>
+<app-mostrar-materiales *ngFor="let seccion of secciones;let i=index" [seccion]=seccion>
+</app-mostrar-materiales>
