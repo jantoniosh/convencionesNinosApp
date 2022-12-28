@@ -1173,7 +1173,6 @@ p.descripcion {
 .block-info-page.etiquetas a {
   font-family: "Akzidenz-Grotesk BQ";
   font-size: 1.1em;
-  word-break: break-all;
 }
 
 .versalitas {

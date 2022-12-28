@@ -59,7 +59,7 @@ export class MainComponent implements OnInit {
       boton: true,
       entradas: [],
       descripcion: [
-        'En este apartado proponemos contenidos para abundar, desde diferentes ángulos, en el conocimiento de las Convención sobre los Derechos del Niño y Convención sobre los Derechos de las Personas con Discapacidad: Vídeos, documentos e infografías.'
+        'En este apartado proponemos contenidos para abundar, desde diferentes ángulos, en el conocimiento de las Convención sobre los Derechos del Niño y Convención sobre los Derechos de las Personas con Discapacidad: videos, documentos e infografías.'
       ]
     },
     {
@@ -72,7 +72,7 @@ export class MainComponent implements OnInit {
       descripcion: []
     },
     {
-      titulo: 'Vídeos',
+      titulo: 'Videos',
       detalle: true,
       color: 'Morado',
       noElementos: 4,
