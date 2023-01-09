@@ -16,7 +16,8 @@ export class CdnComponent implements OnInit {
   imagenUrl: string = "assets/files/cdn/thumb/CDN_Cuadernillo.jpg";
   imagenAlt: string = "portada uno";
   descripciones: string[] = [
-    `Esta convención se refiere a los derechos de niños, niñas, niñes y adolescentes. Se respeta el título de la Convención por ser de carácter oficial, mas se hace esta aclaración con el propósito de plantear un cambio incluyente en el lenguaje. (Nota del equipo editorial).`,
+    `La Convención sobre los Derechos del Niño es la carta internacional por los derechos de niñas, niños y adolescentes, adoptada por unanimidad en la Asamblea General de las Naciones Unidas el 20 de noviembre de 1989 y entró en vigor el 2 de septiembre de 1990.`,
+    `Su ratificación implica el compromiso de cada país para reconocer todas aquellas expresiones que discriminan a las personas menores de edad y adoptar las medidas necesarias y urgentes para garantizar la igualdad sustantiva, a través de reformas a marcos jurídicos nacionales, institucionales, de política pública y decisiones judiciales, a fin de acelerar y hacer realidad los cambios sociales y culturales para eliminar los prejuicios y estereotipos con los que se discrimina a niñas, niños y adolescentes.`
   ];
   archivo: string = 'assets/files/cdn/CDN_Cuadernillo.pdf';
   convencion: string = "Belém do Pará";
